@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if exactly three arguments are not given
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <process_id> <max_processes> <client-facing port>"
+    exit 1
+fi
+
+process_id=$1
+max_processes=$2
+port=$3
+peer_port=$((20000 + process_id))
+
+./server $port $peer_port $max_processes $process_id

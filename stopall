@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Assuming your server is started with a command like "./server"
+pkill -f './server'
+
+echo "All server processes have been stopped."
